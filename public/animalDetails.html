@@ -1,0 +1,75 @@
+<div class="container">
+
+
+    <div class="col-md-5">
+        <div class="col-sm-12">
+            <h1>Details of {{animal.name}}</h1>
+            <table class="table table-striped">
+                <tbody>
+                <tr>
+                    <td><b>Name</b></td>
+                    <td>{{animal.name}}</td>
+                </tr>
+                <tr>
+                    <td><b>Species</b></td>
+                    <td>
+                        <div class="form-group">
+                            <input class="form-control" type="text" ng-value="{{animal.species}}"
+                                   ng-model="animal.species"/>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <button class="btn btn-success" ng-click="updateAnimal()">SAVE</button>
+        </div>
+
+        <h1 class="col-sm-12">Add sighting</h1>
+
+        <div class="col-sm-6">
+            <div class="form-group">
+                <input type="text" class="form-control" id="name" ng-model="sighting.location"
+                       placeholder="Location">
+            </div>
+        </div>
+
+        <div class="col-sm-6">
+            <div class="input-group date">
+                <input type='text' class="form-control datetimepicker" id="time" ng-model="sighting.time"/>
+                <span class="input-group-addon">
+                <span class="glyphicon glyphicon-calendar"></span>
+            </span>
+            </div>
+        </div>
+        <div class="row">
+            <button ng-click="saveSighting()" class="btn btn-success">Add sighting</button>
+        </div>
+        <script type="text/javascript">
+            $(function () {
+                $('.datetimepicker').datetimepicker({
+                    format: 'YYYY-MM-DD HH:mm'
+                });
+            });
+        </script>
+
+
+    </div>
+
+    <div class="col-md-6 col-md-offset-1">
+        <div class="col-sm-12">
+            <h1>Sightings of {{animal.name}}</h1>
+            <table class="table table-striped">
+                <tbody>
+                <tr>
+                    <td>Location</td>
+                    <td>Time</td>
+                </tr>
+                <tr ng-repeat="sight in sightings">
+                    <td>{{ sight.location }}</td>
+                    <td>{{ sight.time }}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

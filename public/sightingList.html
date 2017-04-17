@@ -1,0 +1,23 @@
+<div class="container">
+
+    <h1>List of sightings</h1>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Animal</th>
+            <th>Location</th>
+            <th>Time</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr ng-repeat="sighting in sightings">
+            <td><a href="#/animal-details/{{sighting.animal.id}}">{{ sighting.animal.name }}</a></td>
+            <td><a href="#/sighting-details/{{ sighting.location }}">{{ sighting.location }}</a></td>
+            <td>{{ sighting.time }}</td>
+        </tr>
+
+        </tbody>
+    </table>
+</div>

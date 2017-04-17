@@ -1,0 +1,25 @@
+<div class="container">
+
+    <h1>List of animals</h1>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Species</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr ng-repeat="animal in animals">
+            <td><a href="#/animal-details/{{animal.id}}">{{ animal.name }}</a></td>
+            <td>{{ animal.species }}</td>
+            <td>
+                <button class="btn btn-sm btn-danger" ng-click="deleteAnimal(animal.id)"> Delete</button>
+            </td>
+        </tr>
+
+        </tbody>
+    </table>
+</div>
